@@ -1,0 +1,51 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  color: #444;
+  background: #fafafa;
+  font-family: $font-main;
+  font-weight: 300;
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+* > li {
+  list-style: none;
+}
+
+* > a {
+  text-decoration: none;
+  color: inherit;
+}
+
+* > button,
+* > input {
+  font-family: $font-main;
+}
+
+#root {
+  min-width: 100%;
+}
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header,
+footer {
+  width: 100%;
+}

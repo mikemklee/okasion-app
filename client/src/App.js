@@ -9,7 +9,7 @@ import checkTokenExpiry from "./utils/checkTokenExpiry";
 import store from "./store";
 
 // Components
-import Header from "./components/layout/Header";
+import Header from "./components/header/Header";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 import Landing from "./components/landing/Landing";

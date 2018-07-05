@@ -1,0 +1,91 @@
+.header {
+  height: 6.5rem;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  padding-top: 0.2rem;
+
+  &__brand {
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: "Ropa Sans", sans-serif;
+    margin-right: 1rem;
+  }
+  &__link {
+    font-size: 1.8rem;
+    text-decoration: none;
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    letter-spacing: -1px;
+    background-color: transparent;
+    border-radius: 4px;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: whitesmoke;
+    }
+
+    &--signup {
+      background-color: rgba($pink, 0.7);
+      font-weight: 600;
+      color: white;
+
+      &:hover {
+        background-color: $pink;
+      }
+    }
+  }
+}
+
+.header__left {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.header__right {
+  display: flex;
+  align-items: center;
+}
+
+.header .container {
+  display: flex;
+}
+
+.header__user {
+  margin-left: 2rem;
+  font-size: 1.8rem;
+  display: flex;
+  position: relative;
+  align-items: center;
+  cursor: pointer;
+  img {
+    margin-right: 1rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 5px;
+  }
+  i {
+    margin-left: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__menu {
+    position: absolute;
+    background-color: white;
+    top: 6rem;
+    right: 0;
+    width: 13rem;
+    border: 1px solid #eee;
+    border-radius: 4px;
+
+    &__item {
+      padding: 0.5rem 1rem;
+
+      &:hover {
+        background-color: darken(white, 3%);
+      }
+    }
+  }
+}

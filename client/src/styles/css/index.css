@@ -91,7 +91,21 @@ footer {
     margin-right: 1rem; }
   .header__link {
     font-size: 1.8rem;
-    margin: 0 1.5rem; }
+    text-decoration: none;
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    letter-spacing: -1px;
+    background-color: transparent;
+    border-radius: 4px;
+    transition: all 0.3s; }
+    .header__link:hover {
+      background-color: whitesmoke; }
+    .header__link--signup {
+      background-color: rgba(212, 74, 102, 0.7);
+      font-weight: 600;
+      color: white; }
+      .header__link--signup:hover {
+        background-color: #d44a66; }
 
 .header__left {
   display: flex;
@@ -104,6 +118,34 @@ footer {
 
 .header .container {
   display: flex; }
+
+.header__user {
+  margin-left: 2rem;
+  font-size: 1.8rem;
+  display: flex;
+  position: relative;
+  align-items: center;
+  cursor: pointer; }
+  .header__user img {
+    margin-right: 1rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 5px; }
+  .header__user i {
+    margin-left: 0.5rem;
+    margin-bottom: 0.5rem; }
+  .header__user__menu {
+    position: absolute;
+    background-color: white;
+    top: 6rem;
+    right: 0;
+    width: 13rem;
+    border: 1px solid #eee;
+    border-radius: 4px; }
+    .header__user__menu__item {
+      padding: 0.5rem 1rem; }
+      .header__user__menu__item:hover {
+        background-color: #f7f7f7; }
 
 .landing {
   flex: 1;

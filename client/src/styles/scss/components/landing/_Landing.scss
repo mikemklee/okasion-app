@@ -1,3 +1,46 @@
 .landing {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__logo {
+    width: 11rem;
+    height: 11rem;
+    z-index: 3;
+  }
+
+  &__title {
+    font-size: 5rem;
+    font-weight: normal;
+    font-family: "Ropa Sans", sans-serif;
+  }
+
+  &__subtitle {
+    margin-top: -2rem;
+    margin-bottom: 1rem;
+    font-size: 3rem;
+  }
+
+  &__link {
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    color: white;
+    background-color: $pink;
+    display: flex;
+    align-items: center;
+    transition: all 0.2s;
+
+    span:nth-child(2) {
+      margin-left: 1rem;
+      margin-top: 0.2rem;
+    }
+
+    &:hover {
+      background-color: darken($pink, 7%);
+    }
+  }
 }

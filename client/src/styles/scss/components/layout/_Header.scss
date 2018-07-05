@@ -2,6 +2,8 @@
   height: 6.5rem;
   background-color: #fff;
   border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
 
   &__brand {
     font-size: 2rem;

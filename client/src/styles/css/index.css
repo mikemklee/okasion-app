@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Karla:400,700");
+@import url("https://fonts.googleapis.com/css?family=Ropa+Sans");
 *,
 *::before,
 *::after {
@@ -39,6 +40,10 @@ body {
   display: flex;
   flex-direction: column; }
 
+.container {
+  width: 110rem;
+  margin: 0 auto; }
+
 header,
 footer {
   width: 100%; }
@@ -46,11 +51,44 @@ footer {
 .header {
   height: 6.5rem;
   background-color: #fff;
-  border-bottom: 1px solid #eee; }
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center; }
   .header__brand {
     font-size: 2rem; }
   .header__link {
     font-size: 2rem; }
 
 .landing {
-  flex: 1; }
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .landing__logo {
+    width: 11rem;
+    height: 11rem;
+    z-index: 3; }
+  .landing__title {
+    font-size: 5rem;
+    font-weight: normal;
+    font-family: "Ropa Sans", sans-serif; }
+  .landing__subtitle {
+    margin-top: -2rem;
+    margin-bottom: 1rem;
+    font-size: 3rem; }
+  .landing__link {
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    color: white;
+    background-color: #d44a66;
+    display: flex;
+    align-items: center;
+    transition: all 0.2s; }
+    .landing__link span:nth-child(2) {
+      margin-left: 1rem;
+      margin-top: 0.2rem; }
+    .landing__link:hover {
+      background-color: #ca304f; }

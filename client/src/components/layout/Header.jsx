@@ -9,18 +9,20 @@ class Header extends Component {
   render() {
     return (
       <header className="header">
-        <Link className="header__brand" to="/">
-          Okasion
-        </Link>
-        <Link className="header__link" to="/register">
-          Register
-        </Link>
-        <Link className="header__link" to="/login">
-          Login
-        </Link>
-        <Link className="header__link" to="/createEvent">
-          Create Event
-        </Link>
+        <div className="container">
+          <Link className="header__brand" to="/">
+            Okasion
+          </Link>
+          <Link className="header__link" to="/register">
+            Register
+          </Link>
+          <Link className="header__link" to="/login">
+            Login
+          </Link>
+          <Link className="header__link" to="/createEvent">
+            Create Event
+          </Link>
+        </div>
       </header>
     );
   }

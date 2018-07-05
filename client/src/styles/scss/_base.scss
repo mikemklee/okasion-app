@@ -44,6 +44,10 @@ body {
   display: flex;
   flex-direction: column;
 }
+.container {
+  width: 110rem;
+  margin: 0 auto;
+}
 
 header,
 footer {

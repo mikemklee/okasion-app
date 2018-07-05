@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-import PropTypes from "prop-types";
-
 class Header extends Component {
   static propTypes = {};
 
@@ -10,18 +8,22 @@ class Header extends Component {
     return (
       <header className="header">
         <div className="container">
-          <Link className="header__brand" to="/">
-            Okasion
-          </Link>
-          <Link className="header__link" to="/register">
-            Register
-          </Link>
-          <Link className="header__link" to="/login">
-            Login
-          </Link>
-          <Link className="header__link" to="/createEvent">
-            Create Event
-          </Link>
+          <div className="header__left">
+            <Link className="header__brand" to="/">
+              Okasion
+            </Link>
+            <Link className="header__link" to="/createEvent">
+              Create Event
+            </Link>
+          </div>
+          <div className="header__right">
+            <Link className="header__link" to="/register">
+              Register
+            </Link>
+            <Link className="header__link" to="/login">
+              Login
+            </Link>
+          </div>
         </div>
       </header>
     );

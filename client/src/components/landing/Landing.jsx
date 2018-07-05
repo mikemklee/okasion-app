@@ -11,7 +11,7 @@ class Landing extends Component {
         <Link className="landing__link" to="/feed">
           <span>Get Started</span>
           <span>
-            <i class="fas fa-arrow-right" />
+            <i className="fas fa-arrow-right" />
           </span>
         </Link>
       </div>

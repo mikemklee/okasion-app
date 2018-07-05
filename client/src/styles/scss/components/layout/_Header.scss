@@ -4,11 +4,31 @@
   border-bottom: 1px solid #eee;
   display: flex;
   align-items: center;
+  padding-top: 0.2rem;
 
   &__brand {
-    font-size: 2rem;
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: "Ropa Sans", sans-serif;
+    margin-right: 1rem;
   }
   &__link {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    margin: 0 1.5rem;
   }
+}
+
+.header__left {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.header__right {
+  display: flex;
+  align-items: center;
+}
+
+.header .container {
+  display: flex;
 }

@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Karla:400,700");
 @import url("https://fonts.googleapis.com/css?family=Ropa+Sans");
 @import "./settings";
+@import "./mixins";
 @import "./base";
+@import "./components/common/TextField";
 @import "./components/layout/Header";
 @import "./components/landing/Landing";
+@import "./components/auth/Login";
+@import "./components/auth/Register";

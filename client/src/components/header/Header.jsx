@@ -24,11 +24,9 @@ class Header extends Component {
             <Link className="header__brand" to="/">
               Okasion
             </Link>
-            {isAuthenticated && (
-              <Link className="header__link" to="/createEvent">
-                Create Event
-              </Link>
-            )}
+            <Link className="header__link" to="/events">
+              Events
+            </Link>
           </div>
           <div className="header__right">
             {isAuthenticated ? (

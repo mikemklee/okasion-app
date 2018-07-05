@@ -20,8 +20,8 @@ class AuthHeader extends Component {
     const { menuOpened } = this.state;
     return (
       <Fragment>
-        <Link className="header__link" to="/events">
-          Events
+        <Link className="header__link" to="/createEvent">
+          Create Event
         </Link>
         <div className="header__user" onClick={this.toggleMenu}>
           <img src={user.avatar} alt={user.name} />

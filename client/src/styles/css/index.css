@@ -252,3 +252,45 @@ footer {
     margin-top: 2rem; }
     .register__submit:hover {
       background-color: #ca304f; }
+
+.eventsFeed {
+  max-width: 70rem;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  margin: 3rem 0; }
+  .eventsFeed__header {
+    font-size: 1.6rem;
+    padding: 0.5rem 1.5rem;
+    border-bottom: 1px solid #eee; }
+  .eventsFeed__item:not(:last-child) {
+    border-bottom: 1px solid #eee; }
+  .eventsFeed__item:hover {
+    background-color: #f7f7f7; }
+
+.eventsFeed__item {
+  padding: 2rem;
+  display: flex;
+  font-size: 1.6rem; }
+  .eventsFeed__item--hostImage {
+    margin-right: 2rem; }
+    .eventsFeed__item--hostImage img {
+      width: 6rem;
+      height: 6rem;
+      border-radius: 4px; }
+  .eventsFeed__item__preview--hostedBy {
+    line-height: 1; }
+    .eventsFeed__item__preview--hostedBy span {
+      font-weight: bold; }
+  .eventsFeed__item__preview--title {
+    font-size: 2.5rem;
+    font-weight: bold; }
+  .eventsFeed__item__preview--when {
+    font-size: 2rem; }
+  .eventsFeed__item__preview--description {
+    margin: 0.5rem 0; }
+  .eventsFeed__item__preview__attendee {
+    font-size: 1.8rem;
+    opacity: 0.8; }

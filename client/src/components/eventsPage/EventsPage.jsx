@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 
+import events from "../../seed";
+
 import EventsFeed from "./EventsFeed";
 
 class EventsPage extends Component {
   render() {
+    console.log(events);
     return (
-      <div>
-        <h1>EventsPage</h1>
-        <EventsFeed />
+      <div className="eventsPage container">
+        <EventsFeed events={events} />
       </div>
     );
   }

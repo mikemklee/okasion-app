@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import format from "date-fns/format";
 
 const EventFeedItem = ({ event }) => {
-  console.log(event);
   return (
     <div className="eventsFeed__item">
       <div className="eventsFeed__item--hostImage">
@@ -24,7 +23,8 @@ const EventFeedItem = ({ event }) => {
           {event.title}
         </Link>
         <div className="eventsFeed__item__preview--when">
-          {format(event.date, "MMMM Do")} @ {format(event.date, "h:mm A")}
+          {format(event.date, "dddd")}, {format(event.date, "MMMM Do")} @{" "}
+          {format(event.date, "h:mm A")}
         </div>
         <p className="eventsFeed__item__preview--description">
           {event.description}

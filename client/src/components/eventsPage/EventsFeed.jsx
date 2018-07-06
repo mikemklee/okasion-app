@@ -1,8 +1,9 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 import EventsFeedItem from "./EventsFeedItem";
 
-class EventFeed extends Component {
+class EventsFeed extends Component {
   render() {
     const { events } = this.props;
     return (
@@ -12,7 +13,9 @@ class EventFeed extends Component {
         </div>
         <div className="eventsFeed__list">
           {events && events.length > 0 ? (
-            events.map(event => <EventsFeedItem key={event.id} event={event} />)
+            events.map(event => (
+              <EventsFeedItem key={event._id} event={event} />
+            ))
           ) : (
             <div className="eventsFeed__empty">No Event.</div>
           )}
@@ -22,4 +25,8 @@ class EventFeed extends Component {
   }
 }
 
-export default EventFeed;
+EventsFeed.propTypes = {
+  events: PropTypes.array.isRequired
+};
+
+export default EventsFeed;

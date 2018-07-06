@@ -14,7 +14,10 @@ import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 import Landing from "./components/landing/Landing";
 import EventsPage from "./components/eventsPage/EventsPage";
+import EventView from "./components/eventView/EventView";
 import CreateEvent from "./components/createEvent/CreateEvent";
+import Dashboard from "./components/dashboard/Dashboard";
+import CreateProfile from "./components/createProfile/CreateProfile";
 
 class App extends Component {
   componentDidMount() {
@@ -31,7 +34,10 @@ class App extends Component {
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/events" component={EventsPage} />
+              <Route exact path="/event/:id" component={EventView} />
               <Route exact path="/createEvent" component={CreateEvent} />
+              <Route exact path="/dashboard" component={Dashboard} />
+              <Route exact path="/createProfile" component={CreateProfile} />
             </Switch>
           </div>
         </Router>

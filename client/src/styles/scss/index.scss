@@ -5,6 +5,7 @@
 @import "./base";
 @import "./components/common/TextField";
 @import "./components/common/TextAreaField";
+@import "./components/common/TextIconField";
 @import "./components/common/SelectListField";
 @import "./components/common/DateField";
 @import "./components/header/Header";
@@ -12,6 +13,10 @@
 @import "./components/auth/Login";
 @import "./components/auth/Register";
 @import "./components/forms/EventForm";
+@import "./components/forms/ProfileForm";
 @import "./components/eventsPage/EventsPage";
 @import "./components/eventsPage/EventsFeed";
 @import "./components/createEvent/CreateEvent";
+@import "./components/createProfile/CreateProfile";
+@import "./components/dashboard/Dashboard";
+@import "./components/dashboard/ProfileActions";

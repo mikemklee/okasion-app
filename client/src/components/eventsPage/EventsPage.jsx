@@ -5,8 +5,6 @@ import { connect } from "react-redux";
 import { getEvents } from "../../actions/eventActions";
 
 import Spinner from "../common/Spinner";
-import events from "../../seed";
-
 import EventsFeed from "./EventsFeed";
 
 class EventsPage extends Component {
@@ -20,7 +18,6 @@ class EventsPage extends Component {
     if (events === null || loading) {
       eventContent = <Spinner />;
     } else {
-      console.log(events);
       eventContent = <EventsFeed events={events} />;
     }
     return <div className="eventsPage container">{eventContent}</div>;

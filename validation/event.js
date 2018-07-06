@@ -34,7 +34,7 @@ module.exports = function validateEventInput(data) {
   if (
     !Validator.isLength(data.description, {
       min: 2,
-      max: 40
+      max: 200
     })
   ) {
     console.log(data.description);

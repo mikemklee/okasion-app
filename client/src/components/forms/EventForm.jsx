@@ -60,11 +60,6 @@ class EventForm extends Component {
     };
     this.props.createEvent(newEvent, this.props.history);
     console.log("submitted: ", newEvent);
-    this.setState({
-      title: "",
-      topic: "",
-      description: ""
-    });
   };
 
   render() {
@@ -83,9 +78,9 @@ class EventForm extends Component {
         <SelectListField
           name="topic"
           label="Topic"
-          value={this.state.category}
+          value={this.state.topic}
           onChange={this.onChange}
-          error={errors.category}
+          error={errors.topic}
           options={options}
         />
         <DateField

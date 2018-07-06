@@ -10,6 +10,7 @@ import TextField from "../common/TextField";
 import DateField from "../common/DateField";
 import TextAreaField from "../common/TextAreaField";
 import SelectListField from "../common/SelectListField";
+import PlaceField from "../common/PlaceField";
 
 // Select options for status
 const options = [
@@ -28,6 +29,8 @@ class EventForm extends Component {
     topic: "",
     description: "",
     date: moment(),
+    address: "",
+    latlng: {},
     errors: {}
   };
 
@@ -47,6 +50,13 @@ class EventForm extends Component {
     this.setState({ date });
   };
 
+  onPlaceSelect = place => {
+    this.setState({
+      address: place.gmaps.formatted_address,
+      latlng: place.location
+    });
+  };
+
   onSubmit = event => {
     event.preventDefault();
     const { user } = this.props.auth;
@@ -55,6 +65,8 @@ class EventForm extends Component {
       topic: this.state.topic,
       description: this.state.description,
       date: this.state.date,
+      address: this.state.address,
+      latlng: this.state.latlng,
       host: user.name,
       avatar: user.avatar
     };
@@ -75,6 +87,7 @@ class EventForm extends Component {
           onChange={this.onChange}
           error={errors.title}
         />
+        <PlaceField label="Address" onSelect={this.onPlaceSelect} />
         <SelectListField
           name="topic"
           label="Topic"

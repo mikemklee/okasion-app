@@ -41,6 +41,8 @@ router.post(
       date: req.body.date,
       topic: req.body.topic,
       avatar: req.body.avatar,
+      address: req.body.address,
+      latlng: req.body.latlng,
       user: req.user.id
     });
     console.log("created: ", newEvent);

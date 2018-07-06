@@ -68,7 +68,7 @@
     outline: none;
     width: 100%;
     height: 4rem;
-    border: 1.5px solid $off-white;
+    border: 2px solid $off-white;
     border-radius: 3px;
     padding-left: 1rem;
     margin-bottom: 0.5rem;
@@ -80,7 +80,7 @@
       }
     }
     &:focus {
-      border-color: darken($off-white, 10%);
+      border-color: $pink;
       &::placeholder {
         color: currentColor;
       }

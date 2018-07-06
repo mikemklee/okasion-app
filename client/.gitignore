@@ -9,6 +9,9 @@
 # production
 /build
 
+# env vars
+.env
+
 # css build
 /src/**/*.css
 

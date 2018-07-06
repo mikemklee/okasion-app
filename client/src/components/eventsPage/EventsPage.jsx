@@ -1,18 +1,42 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 
+import { getEvents } from "../../actions/eventActions";
+
+import Spinner from "../common/Spinner";
 import events from "../../seed";
 
 import EventsFeed from "./EventsFeed";
 
 class EventsPage extends Component {
+  componentDidMount() {
+    this.props.getEvents();
+  }
   render() {
-    console.log(events);
-    return (
-      <div className="eventsPage container">
-        <EventsFeed events={events} />
-      </div>
-    );
+    const { events, loading } = this.props.event;
+
+    let eventContent;
+    if (events === null || loading) {
+      eventContent = <Spinner />;
+    } else {
+      console.log(events);
+      eventContent = <EventsFeed events={events} />;
+    }
+    return <div className="eventsPage container">{eventContent}</div>;
   }
 }
 
-export default EventsPage;
+EventsPage.propTypes = {
+  event: PropTypes.object.isRequired,
+  getEvents: PropTypes.func.isRequired
+};
+
+const mapStateToProps = state => ({
+  event: state.event
+});
+
+export default connect(
+  mapStateToProps,
+  { getEvents }
+)(EventsPage);

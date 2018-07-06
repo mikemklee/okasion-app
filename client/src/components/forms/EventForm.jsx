@@ -54,6 +54,7 @@ class EventForm extends Component {
       title: this.state.title,
       topic: this.state.topic,
       description: this.state.description,
+      date: this.state.date,
       host: user.name,
       avatar: user.avatar
     };

@@ -38,6 +38,7 @@ router.post(
       title: req.body.title,
       host: req.body.host,
       description: req.body.description,
+      date: req.body.date,
       topic: req.body.topic,
       avatar: req.body.avatar,
       user: req.user.id

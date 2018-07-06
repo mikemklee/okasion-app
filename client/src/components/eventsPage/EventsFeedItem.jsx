@@ -4,21 +4,22 @@ import { Link } from "react-router-dom";
 import format from "date-fns/format";
 
 const EventFeedItem = ({ event }) => {
+  console.log(event);
   return (
     <div className="eventsFeed__item">
       <div className="eventsFeed__item--hostImage">
-        <img src={event.hostPhotoURL} alt="host" />
+        <img src={event.hostPhoto || `assets/user.png`} alt="host" />
       </div>
       <div className="eventsFeed__item__preview">
         <div className="eventsFeed__item__preview--hostedBy">
           Hosted by{" "}
           <span>
-            <Link to={`/profile/${event.hostUid}`}>{event.hostedBy}</Link>
+            <Link to={`/profile/${event.user}`}>{event.host}</Link>
           </span>
         </div>
         <Link
           className="eventsFeed__item__preview--title"
-          to={`/event/${event.id}`}
+          to={`/event/${event._id}`}
         >
           {event.title}
         </Link>

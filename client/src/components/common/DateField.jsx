@@ -1,5 +1,5 @@
 import React from "react";
-import { InputMoment, BigInputMoment } from "react-input-moment";
+import { BigInputMoment } from "react-input-moment";
 import "react-input-moment/css/input-moment.min.css";
 
 const DateField = ({ date, onChange, label, error }) => {

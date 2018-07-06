@@ -2,10 +2,12 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
+import moment from "moment";
 
 import { createEvent } from "../../actions/eventActions";
 
 import TextField from "../common/TextField";
+import DateField from "../common/DateField";
 import TextAreaField from "../common/TextAreaField";
 import SelectListField from "../common/SelectListField";
 
@@ -25,6 +27,7 @@ class EventForm extends Component {
     title: "",
     topic: "",
     description: "",
+    date: moment(),
     errors: {}
   };
 
@@ -38,6 +41,10 @@ class EventForm extends Component {
     this.setState({
       [event.target.name]: event.target.value
     });
+  };
+
+  onDateChange = date => {
+    this.setState({ date });
   };
 
   onSubmit = event => {
@@ -80,8 +87,14 @@ class EventForm extends Component {
           error={errors.category}
           options={options}
         />
+        <DateField
+          label="Date"
+          error={errors.date}
+          date={this.state.date}
+          onChange={this.onDateChange}
+        />
         <TextAreaField
-          placeholder="What is it about?"
+          placeholder="What is the event about?"
           name="description"
           label="Description"
           value={this.state.description}

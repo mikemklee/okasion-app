@@ -15,6 +15,9 @@ const EventSchema = new Schema({
   host: {
     type: String
   },
+  hostPhoto: {
+    type: String
+  },
   topic: {
     type: String,
     required: true

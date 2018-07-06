@@ -1,3 +1,7 @@
 .selectList {
   @include formField;
+
+  &__input {
+    color: #444;
+  }
 }

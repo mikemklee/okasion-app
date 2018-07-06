@@ -146,6 +146,91 @@ footer {
     padding-left: 1rem; }
   .selectList__error {
     color: red; }
+  .selectList__input {
+    color: #444; }
+
+.dateField {
+  margin: 0.5rem 0;
+  align-self: stretch; }
+  .dateField__input {
+    font-family: "Ropa Sans", sans-serif;
+    font-size: 1.8rem;
+    outline: none;
+    width: 100%;
+    height: 4rem;
+    border: 1.5px solid #f3f3f3;
+    border-radius: 3px;
+    padding-left: 1rem;
+    margin-bottom: 0.5rem;
+    transition: all 0.2s; }
+    .dateField__input--invalid {
+      border-color: red; }
+      .dateField__input--invalid::placeholder {
+        color: red; }
+    .dateField__input:focus {
+      border-color: #dadada; }
+      .dateField__input:focus::placeholder {
+        color: currentColor; }
+  .dateField__info, .dateField__error {
+    line-height: 1;
+    padding: 0.2rem 1rem;
+    font-size: 1.3rem; }
+  .dateField__label {
+    font-size: 1.8rem;
+    padding-left: 1rem; }
+  .dateField__error {
+    color: red; }
+  .dateField__picker {
+    margin: 1rem auto;
+    height: 50rem; }
+
+.im-big-input-moment {
+  border: 1px solid #eee !important;
+  border-radius: 4px !important;
+  padding: 2rem !important; }
+
+.im-date-picker .toolbar {
+  margin-bottom: 1rem; }
+
+.im-input-moment .options button {
+  color: #d44a66 !important;
+  border-color: #d44a66 !important; }
+  .im-input-moment .options button.is-active {
+    background-color: #d44a66 !important;
+    color: #ffffff !important; }
+
+.im-date-picker .toolbar {
+  color: #d44a66 !important; }
+
+.im-date-picker table td {
+  color: #666 !important; }
+  .im-date-picker table td.current {
+    background-color: #d44a66 !important;
+    color: #ffffff !important; }
+  .im-date-picker table td.next-month {
+    color: #bbb !important; }
+
+.im-time-picker .time-text,
+.im-time-slider .time-text {
+  color: #666 !important; }
+
+.im-time-picker .showtime .time,
+.im-time-slider .showtime .time {
+  background-color: #d44a66 !important;
+  color: #ffffff !important; }
+
+.im-time-picker .showtime .separator,
+.im-time-slider .showtime .separator {
+  color: #d44a66 !important; }
+
+.im-time-picker .im-slider .value,
+.im-time-slider .im-slider .value {
+  background-color: #d44a66 !important; }
+
+.im-time-picker .im-slider .handle:after,
+.im-time-slider .im-slider .handle:after {
+  background-color: #ffffff !important;
+  border-color: #d44a66 !important; }
 
 .header {
   height: 6.5rem;

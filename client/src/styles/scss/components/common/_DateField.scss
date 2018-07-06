@@ -1,0 +1,75 @@
+.dateField {
+  @include formField;
+
+  &__picker {
+    margin: 1rem auto;
+    height: 50rem;
+  }
+}
+
+$page-fore: #666;
+$accent-back: $pink;
+$accent-fore: #ffffff;
+
+.im-big-input-moment {
+  border: 1px solid #eee !important;
+  border-radius: 4px !important;
+  padding: 2rem !important;
+}
+
+.im-date-picker .toolbar {
+  margin-bottom: 1rem;
+}
+
+.im-input-moment {
+  .options {
+    button {
+      color: $accent-back !important;
+      border-color: $accent-back !important;
+      &.is-active {
+        background-color: $accent-back !important;
+        color: $accent-fore !important;
+      }
+    }
+  }
+}
+.im-date-picker {
+  .toolbar {
+    color: $accent-back !important;
+  }
+  table td {
+    color: $page-fore !important;
+    &.current {
+      background-color: $accent-back !important;
+      color: $accent-fore !important;
+    }
+
+    &.next-month {
+      color: #bbb !important;
+    }
+  }
+}
+.im-time-picker,
+.im-time-slider {
+  .time-text {
+    color: $page-fore !important;
+  }
+  .showtime {
+    .time {
+      background-color: $accent-back !important;
+      color: $accent-fore !important;
+    }
+    .separator {
+      color: $accent-back !important;
+    }
+  }
+  .im-slider {
+    .value {
+      background-color: $accent-back !important;
+    }
+    .handle:after {
+      background-color: $accent-fore !important;
+      border-color: $accent-back !important;
+    }
+  }
+}

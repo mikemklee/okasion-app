@@ -3,14 +3,26 @@ const Schema = mongoose.Schema;
 
 // Create Schema
 const EventSchema = new Schema({
-  host: {
+  user: {
     type: Schema.Types.ObjectId,
     ref: "users"
   },
-  name: {
+  title: {
     type: String,
     required: true,
     max: 40
+  },
+  host: {
+    type: String
+  },
+  topic: {
+    type: String,
+    required: true
+  },
+  description: {
+    type: String,
+    required: true,
+    max: 200
   },
   date: {
     type: Date,

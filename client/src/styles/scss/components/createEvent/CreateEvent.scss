@@ -1,0 +1,31 @@
+.createEvent {
+  width: 70rem;
+  margin: 2rem auto;
+  background-color: white;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  padding: 2rem;
+
+  &__goback {
+    @include greyButton;
+    margin-left: 1rem;
+  }
+
+  &__title {
+    align-self: flex-start;
+    padding-left: 1rem;
+    margin-top: 2rem;
+    font-size: 3rem;
+    font-weight: 700;
+  }
+
+  &__subtitle {
+    align-self: flex-start;
+    padding-left: 1rem;
+    font-size: 2rem;
+    font-weight: normal;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid $off-white;
+  }
+}

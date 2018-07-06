@@ -5,7 +5,7 @@ const passport = require("passport");
 const path = require("path");
 
 const users = require("./routes/api/users");
-const event = require("./routes/api/event");
+const events = require("./routes/api/events");
 
 const app = express();
 
@@ -30,7 +30,7 @@ require("./config/passport")(passport);
 
 // Use Routes
 app.use("/api/users", users);
-app.use("/api/event", event);
+app.use("/api/events", events);
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === "production") {

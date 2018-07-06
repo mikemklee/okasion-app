@@ -1,0 +1,8 @@
+.textarea {
+  @include formField;
+
+  &__input {
+    padding: 1rem;
+    min-height: 10rem;
+  }
+}

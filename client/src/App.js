@@ -13,8 +13,8 @@ import Header from "./components/header/Header";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 import Landing from "./components/landing/Landing";
-import EventForm from "./components/forms/EventForm";
 import EventsPage from "./components/eventsPage/EventsPage";
+import CreateEvent from "./components/createEvent/CreateEvent";
 
 class App extends Component {
   componentDidMount() {
@@ -31,7 +31,7 @@ class App extends Component {
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/events" component={EventsPage} />
-              <Route exact path="/createEvent" component={EventForm} />
+              <Route exact path="/createEvent" component={CreateEvent} />
             </Switch>
           </div>
         </Router>

@@ -14,7 +14,7 @@ html {
 body {
   color: #444;
   background: #fafafa;
-  font-family: "Karla", sans-serif;
+  font-family: "Ropa Sans", sans-serif;
   font-weight: 300;
   line-height: 1.6;
   display: flex;
@@ -30,7 +30,7 @@ body {
 
 * > button,
 * > input {
-  font-family: "Karla", sans-serif; }
+  font-family: "Ropa Sans", sans-serif; }
 
 #root {
   min-width: 100%; }
@@ -52,6 +52,8 @@ footer {
   margin: 0.5rem 0;
   align-self: stretch; }
   .text__field__input {
+    font-family: "Ropa Sans", sans-serif;
+    font-size: 1.8rem;
     outline: none;
     width: 100%;
     height: 4rem;
@@ -72,10 +74,78 @@ footer {
     line-height: 1;
     padding: 0.2rem 1rem;
     font-size: 1.3rem; }
+  .text__field__label {
+    font-size: 1.8rem;
+    padding-left: 1rem; }
   .text__field__error {
     color: red; }
-  .text__field__label {
-    font-size: 1.5rem; }
+
+.textarea {
+  margin: 0.5rem 0;
+  align-self: stretch; }
+  .textarea__input {
+    font-family: "Ropa Sans", sans-serif;
+    font-size: 1.8rem;
+    outline: none;
+    width: 100%;
+    height: 4rem;
+    border: 1.5px solid #f3f3f3;
+    border-radius: 3px;
+    padding-left: 1rem;
+    margin-bottom: 0.5rem;
+    transition: all 0.2s; }
+    .textarea__input--invalid {
+      border-color: red; }
+      .textarea__input--invalid::placeholder {
+        color: red; }
+    .textarea__input:focus {
+      border-color: #dadada; }
+      .textarea__input:focus::placeholder {
+        color: currentColor; }
+  .textarea__info, .textarea__error {
+    line-height: 1;
+    padding: 0.2rem 1rem;
+    font-size: 1.3rem; }
+  .textarea__label {
+    font-size: 1.8rem;
+    padding-left: 1rem; }
+  .textarea__error {
+    color: red; }
+  .textarea__input {
+    padding: 1rem;
+    min-height: 10rem; }
+
+.selectList {
+  margin: 0.5rem 0;
+  align-self: stretch; }
+  .selectList__input {
+    font-family: "Ropa Sans", sans-serif;
+    font-size: 1.8rem;
+    outline: none;
+    width: 100%;
+    height: 4rem;
+    border: 1.5px solid #f3f3f3;
+    border-radius: 3px;
+    padding-left: 1rem;
+    margin-bottom: 0.5rem;
+    transition: all 0.2s; }
+    .selectList__input--invalid {
+      border-color: red; }
+      .selectList__input--invalid::placeholder {
+        color: red; }
+    .selectList__input:focus {
+      border-color: #dadada; }
+      .selectList__input:focus::placeholder {
+        color: currentColor; }
+  .selectList__info, .selectList__error {
+    line-height: 1;
+    padding: 0.2rem 1rem;
+    font-size: 1.3rem; }
+  .selectList__label {
+    font-size: 1.8rem;
+    padding-left: 1rem; }
+  .selectList__error {
+    color: red; }
 
 .header {
   height: 6.5rem;
@@ -106,6 +176,10 @@ footer {
       color: white; }
       .header__link--signup:hover {
         background-color: #d44a66; }
+    .header__link--createEvent {
+      background-color: whitesmoke; }
+      .header__link--createEvent:hover {
+        background-color: #ededed; }
 
 .header__left {
   display: flex;
@@ -159,7 +233,7 @@ footer {
     z-index: 3; }
   .landing__title {
     font-size: 5rem;
-    font-weight: normal;
+    font-weight: bold;
     font-family: "Ropa Sans", sans-serif; }
   .landing__subtitle {
     margin-top: -2rem;
@@ -205,7 +279,7 @@ footer {
     margin: 0 0.5rem;
     height: 4rem;
     width: 9rem;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     color: white;
     background-color: #d44a66;
     display: flex;
@@ -242,7 +316,7 @@ footer {
     margin: 0 0.5rem;
     height: 4rem;
     width: 9rem;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     color: white;
     background-color: #d44a66;
     display: flex;
@@ -251,6 +325,32 @@ footer {
     transition: all 0.2s;
     margin-top: 2rem; }
     .register__submit:hover {
+      background-color: #ca304f; }
+
+.eventForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 30rem; }
+  .eventForm__submit {
+    display: inline-block;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 3px;
+    margin: 0 0.5rem;
+    height: 4rem;
+    width: 9rem;
+    font-size: 1.8rem;
+    color: white;
+    background-color: #d44a66;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s;
+    align-self: flex-end; }
+    .eventForm__submit:hover {
       background-color: #ca304f; }
 
 .eventsFeed {
@@ -294,3 +394,35 @@ footer {
   .eventsFeed__item__preview__attendee {
     font-size: 1.8rem;
     opacity: 0.8; }
+
+.createEvent {
+  width: 70rem;
+  margin: 2rem auto;
+  background-color: white;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  padding: 2rem; }
+  .createEvent__goback {
+    align-self: flex-start;
+    font-size: 1.8rem;
+    padding: 1rem;
+    background-color: whitesmoke;
+    border-radius: 4px;
+    transition: all 0.2s;
+    margin-left: 1rem; }
+    .createEvent__goback:hover {
+      background-color: #f0f0f0; }
+  .createEvent__title {
+    align-self: flex-start;
+    padding-left: 1rem;
+    margin-top: 2rem;
+    font-size: 3rem;
+    font-weight: 700; }
+  .createEvent__subtitle {
+    align-self: flex-start;
+    padding-left: 1rem;
+    font-size: 2rem;
+    font-weight: normal;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #f3f3f3; }

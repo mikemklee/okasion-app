@@ -9,7 +9,7 @@
   &__brand {
     font-size: 3rem;
     font-weight: bold;
-    font-family: "Ropa Sans", sans-serif;
+    font-family: $font-main;
     margin-right: 1rem;
   }
   &__link {
@@ -33,6 +33,14 @@
 
       &:hover {
         background-color: $pink;
+      }
+    }
+
+    &--createEvent {
+      background-color: whitesmoke;
+
+      &:hover {
+        background-color: darken(whitesmoke, 3%);
       }
     }
   }

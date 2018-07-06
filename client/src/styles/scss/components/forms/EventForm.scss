@@ -1,0 +1,12 @@
+.eventForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 30rem;
+
+  &__submit {
+    @include button;
+    align-self: flex-end;
+  }
+}

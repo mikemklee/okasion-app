@@ -7,6 +7,20 @@ class AuthHeader extends Component {
     menuOpened: false
   };
 
+  trackMenuOpen = event => {
+    if (event.target !== this.menu) {
+      this.setState({ menuOpened: false });
+    }
+  };
+
+  componentDidMount() {
+    window.addEventListener("click", this.trackMenuOpen);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("click", this.trackMenuOpen);
+  }
+
   toggleMenu = () => {
     this.setState(prevState => {
       return {
@@ -26,14 +40,20 @@ class AuthHeader extends Component {
         >
           Host Event
         </Link>
-        <div className="header__user" onClick={this.toggleMenu}>
+        <div
+          className="header__user"
+          onClick={this.toggleMenu}
+          ref={menu => {
+            this.menu = menu;
+          }}
+        >
           <img src={user.avatar} alt={user.name} />
           {user.name}
           <i className="fas fa-sort-down" />
           {menuOpened && (
             <div className="header__user__menu">
               <div className="header__user__menu__item">
-                <Link to="/">My Profile</Link>
+                <Link to="/dashboard">My Profile</Link>
               </div>
               <div className="header__user__menu__item">
                 <Link to="/">Settings</Link>

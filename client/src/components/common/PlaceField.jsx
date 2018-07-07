@@ -4,8 +4,6 @@ import PropTypes from "prop-types";
 import Script from "react-load-script";
 import Geosuggest from "react-geosuggest";
 
-const GOOGLE_MAP_KEY = process.env.REACT_APP_GOOGLE_MAP_KEY;
-
 class PlaceField extends Component {
   state = {
     scriptLoaded: false
@@ -18,7 +16,7 @@ class PlaceField extends Component {
     return (
       <div className="placeField">
         <Script
-          url={`https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAP_KEY}&libraries=places`}
+          url={`https://maps.googleapis.com/maps/api/js?key=AIzaSyBg2JzymZWfjGD0NFmnw5P08dbnw9NYGbs&libraries=places`}
           onLoad={this.handleScriptLoaded}
         />
         {label && <h6 className="placeField__label">{label}</h6>}

@@ -53,7 +53,7 @@ class AuthHeader extends Component {
           {menuOpened && (
             <div className="header__user__menu">
               <div className="header__user__menu__item">
-                <Link to="/dashboard">My Profile</Link>
+                <Link to="/">My Profile</Link>
               </div>
               <div className="header__user__menu__item">
                 <Link to="/">Settings</Link>

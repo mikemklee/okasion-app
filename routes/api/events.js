@@ -67,6 +67,29 @@ router.post(
   }
 );
 
+// @route   DELETE api/events/:id
+// @desc    Delete event
+// @access  Private
+router.delete(
+  "/:id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Event.findById(req.params.id)
+      .then(event => {
+        // Check for event owner
+        if (event.user.toString() !== req.user.id) {
+          return res.status(401).json({ notauthorized: "User not authorized" });
+        }
+
+        // Delete
+        event.remove().then(() => res.json({ success: true }));
+      })
+      .catch(error =>
+        res.status(404).json({ eventnotfound: "No event found" })
+      );
+  }
+);
+
 // @route   POST api/events/go/:id
 // @desc    Attend Event
 // @access  Private

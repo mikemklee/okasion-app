@@ -53,10 +53,11 @@ class EventForm extends Component {
   };
 
   onPlaceSelect = place => {
-    this.setState({
-      address: place.gmaps.formatted_address,
-      latlng: place.location
-    });
+    place &&
+      this.setState({
+        address: place.gmaps.formatted_address,
+        latlng: place.location
+      });
   };
 
   onSubmit = event => {

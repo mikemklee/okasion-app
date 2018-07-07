@@ -1,4 +1,5 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
@@ -8,8 +9,13 @@ import format from "date-fns/format";
 import {
   getEventById,
   addAttendee,
-  removeAttendee
+  removeAttendee,
+  deleteEvent
 } from "../../actions/eventActions";
+
+// components
+import EventGuestActions from "./EventGuestActions";
+import EventHostActions from "./EventHostActions";
 
 // utils
 import { amIAttending } from "../../utils/amIAttending";
@@ -23,21 +29,25 @@ class EventHeader extends Component {
     this.props.getEventById(this.props.eventId);
   }
 
-  onAttendClick = id => () => {
+  onAttend = id => () => {
     this.props.addAttendee(id);
     this.props.getEventById(this.props.eventId);
   };
 
-  onCancelClick = id => () => {
+  onCancelAttend = id => () => {
     this.props.removeAttendee(id);
     this.props.getEventById(this.props.eventId);
+  };
+
+  onCancelEvent = id => () => {
+    this.props.deleteEvent(id, this.props.history);
   };
 
   render() {
     const { user } = this.props.auth;
     const { event } = this.props.event;
     let attending = amIAttending(user.id, event.attendees);
-
+    let isHost = user.id === event.user;
     return (
       <div className="eventView__header">
         <div className="eventView__header--left">
@@ -57,39 +67,19 @@ class EventHeader extends Component {
         </div>
         <div className="eventView__header--right">
           <div className="eventView__header__attendees">
-            {event.attendees ? (
+            {event.attendees && (
               <span>{event.attendees.length} Members Attending</span>
-            ) : (
-              <span>Be the first to join this event!</span>
             )}
           </div>
-          <div className="eventView__header__actions">
-            {attending ? (
-              <Fragment>
-                <span className="eventView__header__actions--info">
-                  You are attending this event.
-                </span>
-                <div
-                  onClick={this.onCancelClick(event._id)}
-                  className="eventView__header__actions--notattend"
-                >
-                  Cancel my place
-                </div>
-              </Fragment>
-            ) : (
-              <Fragment>
-                <span className="eventView__header__actions--info">
-                  You are attending this event.
-                </span>
-                <div
-                  onClick={this.onAttendClick(event._id)}
-                  className="eventView__header__actions--attend"
-                >
-                  I'll attend!
-                </div>
-              </Fragment>
-            )}
-          </div>
+          {isHost ? (
+            <EventHostActions onCancel={this.onCancelEvent(event._id)} />
+          ) : (
+            <EventGuestActions
+              attending={attending}
+              onAttend={this.onAttend(event._id)}
+              onCancelAttend={this.onCancelAttend(event._id)}
+            />
+          )}
         </div>
       </div>
     );
@@ -110,7 +100,9 @@ const mapStateToProps = state => ({
   profile: state.profile
 });
 
-export default connect(
-  mapStateToProps,
-  { getEventById, addAttendee, removeAttendee }
-)(EventHeader);
+export default withRouter(
+  connect(
+    mapStateToProps,
+    { getEventById, addAttendee, removeAttendee, deleteEvent }
+  )(EventHeader)
+);

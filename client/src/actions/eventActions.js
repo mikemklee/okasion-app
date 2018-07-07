@@ -6,6 +6,7 @@ import {
   GET_EVENTS,
   GET_EVENT,
   CREATE_EVENT,
+  DELETE_EVENT,
   EVENT_LOADING
 } from "./types";
 
@@ -17,6 +18,25 @@ export const createEvent = (eventData, history) => dispatch => {
     .then(res => {
       dispatch(addAttendee(res.data._id));
       dispatch({ type: CREATE_EVENT, payload: res.data });
+      history.push("/events");
+    })
+    .catch(error =>
+      dispatch({
+        type: GET_ERRORS,
+        payload: error.response.data
+      })
+    );
+};
+
+// Delete Event
+export const deleteEvent = (id, history) => dispatch => {
+  axios
+    .delete(`/api/events/${id}`)
+    .then(res => {
+      dispatch({
+        type: DELETE_EVENT,
+        payload: id
+      });
       history.push("/events");
     })
     .catch(error =>

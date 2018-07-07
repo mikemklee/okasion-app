@@ -4,8 +4,10 @@ import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
 import moment from "moment";
 
+// actions
 import { createEvent } from "../../actions/eventActions";
 
+// components
 import TextField from "../common/TextField";
 import DateField from "../common/DateField";
 import TextAreaField from "../common/TextAreaField";

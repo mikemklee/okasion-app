@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import GoogleMapReact from "google-map-react";
+import PropTypes from "prop-types";
 
+// components
 import Spinner from "../common/Spinner";
 import Icon from "../common/Icon";
 
@@ -35,5 +37,9 @@ class EventMap extends Component {
     }
   }
 }
+
+EventMap.propTypes = {
+  coords: PropTypes.object
+};
 
 export default EventMap;

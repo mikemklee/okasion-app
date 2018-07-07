@@ -35,12 +35,12 @@ const TextField = ({
 
 TextField.propTypes = {
   name: PropTypes.string.isRequired,
-  placeholder: PropTypes.string,
+  type: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  placeholder: PropTypes.string,
   info: PropTypes.string,
   error: PropTypes.string,
-  type: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
   disabled: PropTypes.string
 };
 

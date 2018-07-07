@@ -1,5 +1,5 @@
 import React from "react";
-
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import format from "date-fns/format";
 
@@ -39,6 +39,10 @@ const EventFeedItem = ({ event }) => {
       </div>
     </div>
   );
+};
+
+EventFeedItem.propTypes = {
+  event: PropTypes.object.isRequired
 };
 
 export default EventFeedItem;

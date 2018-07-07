@@ -2,8 +2,10 @@ import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
+// actions
 import { getEventById } from "../../actions/eventActions";
 
+// components
 import Spinner from "../common/Spinner";
 import EventHeader from "./EventHeader";
 import EventMain from "./EventMain";
@@ -45,6 +47,10 @@ class EventView extends Component {
     return <div className="eventView container">{eventContent}</div>;
   }
 }
+
+EventView.propTypes = {
+  event: PropTypes.object.isRequired
+};
 
 const mapStateToProps = state => ({
   event: state.event,

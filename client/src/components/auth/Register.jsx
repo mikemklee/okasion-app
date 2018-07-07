@@ -2,8 +2,10 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
+// actions
 import { registerUser } from "../../actions/authActions";
 
+// components
 import TextField from "../common/TextField";
 
 class Register extends Component {

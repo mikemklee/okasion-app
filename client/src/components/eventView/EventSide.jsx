@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import format from "date-fns/format";
 
 import Icon from "../common/Icon";
@@ -19,6 +20,10 @@ const EventSide = ({ event }) => {
       <EventMap coords={event.latlng} />
     </div>
   );
+};
+
+EventSide.propTypes = {
+  event: PropTypes.object.isRequired
 };
 
 export default EventSide;

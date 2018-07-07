@@ -35,11 +35,12 @@ module.exports = function validateEventInput(data) {
   if (
     !Validator.isLength(data.description, {
       min: 2,
-      max: 200
+      max: 1000
     })
   ) {
     console.log(data.description);
-    errors.description = "Description needs to be between 2 and 200 characters";
+    errors.description =
+      "Description needs to be between 2 and 1000 characters";
   }
 
   if (Validator.isEmpty(data.description)) {

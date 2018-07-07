@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const EventMain = ({ event }) => {
   return (
@@ -12,6 +13,10 @@ const EventMain = ({ event }) => {
       </div>
     </div>
   );
+};
+
+EventMain.propTypes = {
+  event: PropTypes.object.isRequired
 };
 
 export default EventMain;

@@ -2,8 +2,10 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
+// actions
 import { getEvents } from "../../actions/eventActions";
 
+// components
 import Spinner from "../common/Spinner";
 import EventsFeed from "./EventsFeed";
 

@@ -9,11 +9,11 @@ const ProfileActions = () => {
       <Link to="/edit-profile" className="dashboard__actions__item">
         <Icon name="user" /> Edit Profile
       </Link>
-      <Link to="/add-experience" className="dashboard__actions__item">
+      <Link to="/dashboard" className="dashboard__actions__item">
         <Icon name="linkedin" />
         Add Experience
       </Link>
-      <Link to="/add-education" className="dashboard__actions__item">
+      <Link to="/dashboard" className="dashboard__actions__item">
         <Icon name="feather" />
         Add Education
       </Link>

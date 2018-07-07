@@ -820,7 +820,7 @@ footer {
   flex: 1;
   display: flex;
   align-items: center;
-  justify-content: center; }
+  justify-content: flex-end; }
   .eventView__header__attendees span {
     font-size: 2rem;
     opacity: 0.8; }

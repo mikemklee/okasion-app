@@ -2,8 +2,10 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
+// actions
 import { loginUser } from "../../actions/authActions";
 
+// components
 import TextField from "../common/TextField";
 
 class Login extends Component {

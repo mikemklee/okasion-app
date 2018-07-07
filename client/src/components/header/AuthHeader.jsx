@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 class AuthHeader extends Component {
@@ -69,5 +69,10 @@ class AuthHeader extends Component {
     );
   }
 }
+
+AuthHeader.propTypes = {
+  user: PropTypes.object.isRequired,
+  logout: PropTypes.func.isRequired
+};
 
 export default AuthHeader;

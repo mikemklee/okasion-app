@@ -1,5 +1,6 @@
 /*global google*/
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import Script from "react-load-script";
 import Geosuggest from "react-geosuggest";
 
@@ -39,5 +40,12 @@ class PlaceField extends Component {
     );
   }
 }
+
+PlaceField.propTypes = {
+  onSelect: PropTypes.func.isRequired,
+  label: PropTypes.string,
+  info: PropTypes.string,
+  error: PropTypes.string
+};
 
 export default PlaceField;

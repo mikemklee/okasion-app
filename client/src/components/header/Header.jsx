@@ -3,8 +3,10 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
+// actions
 import { logoutUser } from "../../actions/authActions";
 
+// components
 import AuthHeader from "./AuthHeader";
 import GuestHeader from "./GuestHeader";
 

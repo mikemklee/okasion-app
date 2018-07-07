@@ -11,7 +11,7 @@ const EventHeader = ({ event }) => {
         </div>
         <h1 className="eventView__header__title">{event.title}</h1>
         <Link to={`/profile/${event.host}`} className="eventView__header__host">
-          <img src={event.hostPhoto || `assets/user.png`} alt="host" />
+          <img src={event.hostPhoto} alt="host" />
           <span>
             Hosted by <strong>{event.host}</strong>
           </span>

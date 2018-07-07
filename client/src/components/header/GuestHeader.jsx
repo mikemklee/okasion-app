@@ -1,8 +1,7 @@
 import React, { Fragment } from "react";
-
 import { Link } from "react-router-dom";
 
-const GuestHeader = ({ user }) => {
+const GuestHeader = () => {
   return (
     <Fragment>
       <Link className="header__link header__link--signup" to="/register">

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
+// components
 import ProfileForm from "../forms/ProfileForm";
 
 class CreateProfile extends Component {

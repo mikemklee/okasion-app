@@ -3,8 +3,10 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
 
+// actions
 import { createProfile } from "../../actions/profileActions";
 
+// components
 import TextField from "../common/TextField";
 import TextAreaField from "../common/TextAreaField";
 import TextIconField from "../common/TextIconField";

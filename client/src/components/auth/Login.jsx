@@ -68,7 +68,7 @@ class Login extends Component {
             onChange={this.onChange}
             error={errors.password}
           />
-          <input type="submit" className="login__submit" />
+          <input type="submit" value="Submit" className="login__submit" />
         </form>
       </div>
     );

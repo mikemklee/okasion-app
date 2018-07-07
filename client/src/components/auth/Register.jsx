@@ -87,7 +87,7 @@ class Register extends Component {
             onChange={this.onChange}
             error={errors.password2}
           />
-          <input type="submit" className="register__submit" />
+          <input type="submit" value="Submit" className="register__submit" />
         </form>
       </div>
     );

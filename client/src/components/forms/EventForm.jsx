@@ -116,7 +116,7 @@ class EventForm extends Component {
           onChange={this.onChange}
           error={errors.description}
         />
-        <input type="submit" className="eventForm__submit" />
+        <input type="submit" value="Submit" className="eventForm__submit" />
       </form>
     );
   }

@@ -100,12 +100,12 @@ Register.propTypes = {
   errors: PropTypes.object.isRequired
 };
 
-const mapDispatchToProps = state => ({
+const mapStateToProps = state => ({
   auth: state.auth,
   errors: state.errors
 });
 
 export default connect(
-  mapDispatchToProps,
+  mapStateToProps,
   { registerUser }
 )(Register);

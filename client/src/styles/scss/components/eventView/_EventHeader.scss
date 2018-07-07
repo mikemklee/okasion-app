@@ -54,7 +54,14 @@
   &__actions {
     margin-top: 1rem;
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
+    align-items: flex-end;
+
+    &--info {
+      font-size: 1.8rem;
+      opacity: 0.8;
+      margin-bottom: 1rem;
+    }
 
     &--attend {
       @include button;
@@ -62,6 +69,7 @@
 
     &--notattend {
       @include button;
+      width: 13rem;
       background-color: whitesmoke;
       color: #444;
       &:hover {

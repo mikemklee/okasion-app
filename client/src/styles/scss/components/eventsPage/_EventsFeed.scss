@@ -54,6 +54,8 @@
 
     &--description {
       margin: 0.5rem 0;
+      height: 5rem;
+      overflow-y: hidden;
     }
     &__attendee {
       font-size: 1.8rem;

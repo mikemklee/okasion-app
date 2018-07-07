@@ -73,7 +73,6 @@ class EventForm extends Component {
       hostPhoto: user.avatar
     };
     this.props.createEvent(newEvent, this.props.history);
-    console.log("submitted: ", newEvent);
   };
 
   render() {
@@ -128,14 +127,14 @@ EventForm.propTypes = {
   errors: PropTypes.object.isRequired
 };
 
-const mapDispatchToProps = state => ({
+const mapStateToProps = state => ({
   auth: state.auth,
   errors: state.errors
 });
 
 export default withRouter(
   connect(
-    mapDispatchToProps,
+    mapStateToProps,
     { createEvent }
   )(EventForm)
 );

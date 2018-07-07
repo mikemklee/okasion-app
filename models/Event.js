@@ -42,7 +42,15 @@ const EventSchema = new Schema({
   date: {
     type: Date,
     default: Date.now
-  }
+  },
+  attendees: [
+    {
+      user: {
+        type: Schema.Types.ObjectId,
+        ref: "users"
+      }
+    }
+  ]
 });
 
 module.exports = Event = mongoose.model("event", EventSchema);

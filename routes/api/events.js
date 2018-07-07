@@ -63,8 +63,75 @@ router.post(
       latlng: req.body.latlng,
       user: req.user.id
     });
-    console.log("created: ", newEvent);
     newEvent.save().then(event => res.json(event));
+  }
+);
+
+// @route   POST api/events/go/:id
+// @desc    Attend Event
+// @access  Private
+router.post(
+  "/go/:id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Event.findById(req.params.id)
+      .then(event => {
+        // check if already liked
+        if (
+          event.attendees.filter(
+            attendee => attendee.user.toString() === req.user.id
+          ).length > 0
+        ) {
+          return res
+            .status(400)
+            .json({ alreadygoing: "User already going to this event" });
+        }
+
+        // Add user id to attendees array
+        event.attendees.unshift({ user: req.user.id });
+
+        event.save().then(event => res.json(event));
+      })
+      .catch(error =>
+        res.status(404).json({ eventnotfound: "No event found" })
+      );
+  }
+);
+
+// @route   POST api/events/nogo/:id
+// @desc    Unattend post
+// @access  Private
+router.post(
+  "/nogo/:id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Event.findById(req.params.id)
+      .then(event => {
+        // check if already attending
+        if (
+          event.attendees.filter(
+            attendee => attendee.user.toString() === req.user.id
+          ).length === 0
+        ) {
+          return res
+            .status(400)
+            .json({ notattendingyet: "User have not yet attended this event" });
+        }
+
+        // Get remove index
+        const removeIndex = event.attendees
+          .map(item => item.user.toString())
+          .indexOf(req.user.id);
+
+        // Splice out of array
+        event.attendees.splice(removeIndex, 1);
+
+        // Save
+        event.save().then(event => res.json(event));
+      })
+      .catch(error =>
+        res.status(404).json({ eventnotfound: "No event found" })
+      );
   }
 );
 

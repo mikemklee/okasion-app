@@ -12,11 +12,6 @@ import EventMain from "./EventMain";
 import EventSide from "./EventSide";
 
 class EventView extends Component {
-  static propTypes = {
-    event: PropTypes.object.isRequired,
-    getEventById: PropTypes.func.isRequired
-  };
-
   componentDidMount() {
     if (this.props.match.params.id) {
       this.props.getEventById(this.props.match.params.id);
@@ -31,6 +26,8 @@ class EventView extends Component {
 
   render() {
     const { event, loading } = this.props.event;
+    const eventId = this.props.match.params.id;
+
     let eventContent;
 
     if (event === null || loading) {
@@ -38,7 +35,7 @@ class EventView extends Component {
     } else {
       eventContent = (
         <Fragment>
-          <EventHeader event={event} />
+          <EventHeader eventId={eventId} />
           <EventMain event={event} />
           <EventSide event={event} />
         </Fragment>
@@ -49,7 +46,8 @@ class EventView extends Component {
 }
 
 EventView.propTypes = {
-  event: PropTypes.object.isRequired
+  event: PropTypes.object.isRequired,
+  getEventById: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({

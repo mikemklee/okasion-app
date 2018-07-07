@@ -98,14 +98,14 @@ ProfileForm.propTypes = {
   errors: PropTypes.object.isRequired
 };
 
-const mapDispatchToProps = state => ({
+const mapStateToProps = state => ({
   auth: state.auth,
   errors: state.errors
 });
 
 export default withRouter(
   connect(
-    mapDispatchToProps,
+    mapStateToProps,
     { createProfile }
   )(ProfileForm)
 );

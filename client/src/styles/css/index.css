@@ -361,6 +361,25 @@ footer {
 .geosuggest__item__matched-text {
   font-weight: bold; }
 
+.spinner:before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  margin-top: -30px;
+  margin-left: -30px;
+  border-radius: 50%;
+  border: 3px solid lightgray;
+  border-top-color: coral;
+  animation: spinner 0.7s linear infinite; }
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg); } }
+
 .header {
   height: 6.5rem;
   background-color: #fff;
@@ -423,6 +442,7 @@ footer {
     margin-left: 0.5rem;
     margin-bottom: 0.5rem; }
   .header__user__menu {
+    z-index: 10;
     position: absolute;
     background-color: white;
     top: 6rem;
@@ -630,7 +650,9 @@ footer {
   .eventsFeed__item__preview--when {
     font-size: 2rem; }
   .eventsFeed__item__preview--description {
-    margin: 0.5rem 0; }
+    margin: 0.5rem 0;
+    height: 5rem;
+    overflow-y: hidden; }
   .eventsFeed__item__preview__attendee {
     font-size: 1.8rem;
     opacity: 0.8; }
@@ -828,7 +850,12 @@ footer {
 .eventView__header__actions {
   margin-top: 1rem;
   display: flex;
-  justify-content: flex-end; }
+  flex-direction: column;
+  align-items: flex-end; }
+  .eventView__header__actions--info {
+    font-size: 1.8rem;
+    opacity: 0.8;
+    margin-bottom: 1rem; }
   .eventView__header__actions--attend {
     display: inline-block;
     border: none;
@@ -863,6 +890,7 @@ footer {
     justify-content: center;
     align-items: center;
     transition: all 0.2s;
+    width: 13rem;
     background-color: whitesmoke;
     color: #444; }
     .eventView__header__actions--notattend:hover {

@@ -5,6 +5,7 @@ const passport = require("passport");
 
 // Load Validation
 const validateEventInput = require("../../validation/event");
+const validateCommentInput = require("../../validation/comment");
 
 // Load Event Model
 const Event = require("../../models/Event");
@@ -150,6 +151,77 @@ router.post(
         event.attendees.splice(removeIndex, 1);
 
         // Save
+        event.save().then(event => res.json(event));
+      })
+      .catch(error =>
+        res.status(404).json({ eventnotfound: "No event found" })
+      );
+  }
+);
+
+// @route   POST api/events/comment/:id
+// @desc    Add comment to event
+// @access  Private
+router.post(
+  "/comment/:id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    const { errors, isValid } = validateCommentInput(req.body);
+
+    // Check Validation
+    if (!isValid) {
+      // if any errors, send 400 with errors object
+      return res.status(400).json(errors);
+    }
+
+    Event.findById(req.params.id)
+      .then(event => {
+        const newComment = {
+          text: req.body.text,
+          name: req.body.name,
+          avatar: req.body.avatar,
+          user: req.user.id
+        };
+
+        // Add to comments array
+        event.comments.unshift(newComment);
+
+        // Save
+        event.save().then(event => res.json(event));
+      })
+      .catch(error =>
+        res.status(404).json({ eventnotfound: "No event found" })
+      );
+  }
+);
+
+// @route   DELETE api/events/comment/:id/:comment_id
+// @desc    Remove comment from event
+// @access  Private
+router.delete(
+  "/comment/:id/:comment_id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Event.findById(req.params.id)
+      .then(event => {
+        // check to see if comment exists
+        if (
+          event.comments.filter(
+            comment => comment._id.toString() === req.params.comment_id
+          ).length === 0
+        ) {
+          return res
+            .status(404)
+            .json({ commentnotexists: "Comment does not exist" });
+        }
+
+        // Get remove index
+        const removeIndex = event.comments
+          .map(item => item._id.toString())
+          .indexOf(req.params.comment_id);
+
+        // Splice out of array and save
+        event.comments.splice(removeIndex, 1);
         event.save().then(event => res.json(event));
       })
       .catch(error =>

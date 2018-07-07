@@ -1,0 +1,67 @@
+.comment__item {
+  display: grid;
+  grid-template-columns: 1fr 7fr;
+  grid-template-rows: 1fr min-content;
+  padding: 1rem;
+  transition: all 0.2s;
+  border-bottom: 1px solid #eee;
+
+  &:hover {
+    background-color: darken(white, 3%);
+  }
+
+  &__avatar {
+    grid-row: 1/-1;
+    grid-column: 1/2;
+    padding-top: 1rem;
+    img {
+      width: 4rem;
+      border-radius: 5px;
+    }
+  }
+
+  &__detail {
+    padding-top: 1rem;
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    grid-template-rows: min-content 1fr;
+    grid-column-gap: 1rem;
+    &--name {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    &--date {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+      font-size: 1.8rem;
+      color: grey;
+    }
+    &--text {
+      grid-column: 1 / -1;
+      grid-row: 2 / -1;
+      font-size: 1.8rem;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: flex-end;
+
+    &--delete {
+      @include button;
+      margin: 0;
+      width: 7rem;
+      height: 3rem;
+      background-color: transparent;
+      border: 1.5px solid $red;
+      color: $red;
+      &:hover {
+        background-color: $red;
+        color: white;
+      }
+    }
+  }
+}

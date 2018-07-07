@@ -1,8 +1,13 @@
+// Google Fonts
 @import url("https://fonts.googleapis.com/css?family=Karla:400,700");
 @import url("https://fonts.googleapis.com/css?family=Ropa+Sans");
+
+// Base styles, variables, mixins
 @import "./settings";
 @import "./mixins";
 @import "./base";
+
+// Common
 @import "./components/common/TextField";
 @import "./components/common/TextAreaField";
 @import "./components/common/TextIconField";
@@ -10,20 +15,39 @@
 @import "./components/common/DateField";
 @import "./components/common/PlaceField";
 @import "./components/common/Spinner";
+
+// Layout
 @import "./components/header/Header";
 @import "./components/landing/Landing";
+
+// Auth
 @import "./components/auth/Login";
 @import "./components/auth/Register";
+
+// Forms
 @import "./components/forms/EventForm";
 @import "./components/forms/ProfileForm";
+@import "./components/forms/CommentForm";
+
+// EventsPage
 @import "./components/eventsPage/EventsPage";
 @import "./components/eventsPage/EventsFeed";
+
+// CreateEvent & CreateProfile
 @import "./components/createEvent/CreateEvent";
 @import "./components/createProfile/CreateProfile";
+
+// Dashboard
 @import "./components/dashboard/Dashboard";
 @import "./components/dashboard/ProfileActions";
+
+// EventView
 @import "./components/eventView/EventView";
 @import "./components/eventView/EventHeader";
 @import "./components/eventView/EventMain";
 @import "./components/eventView/EventSide";
 @import "./components/eventView/EventActions";
+
+// EventComments
+@import "./components/eventComments/EventComments";
+@import "./components/eventComments/CommentItem";

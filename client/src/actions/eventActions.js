@@ -108,6 +108,38 @@ export const removeAttendee = id => dispatch => {
     );
 };
 
+// Add Comment
+export const addComment = (eventId, commentData) => dispatch => {
+  dispatch(clearErrors());
+  axios
+    .post(`/api/events/comment/${eventId}`, commentData)
+    .then(res =>
+      dispatch({
+        type: GET_EVENT,
+        payload: res.data
+      })
+    )
+    .catch(error =>
+      dispatch({
+        type: GET_ERRORS,
+        payload: error.response.data
+      })
+    );
+};
+
+// Delete Comment
+export const deleteComment = (eventId, commentId) => dispatch => {
+  axios
+    .delete(`/api/events/comment/${eventId}/${commentId}`)
+    .then(res => dispatch({ type: GET_EVENT, payload: res.data }))
+    .catch(error =>
+      dispatch({
+        type: GET_ERRORS,
+        payload: error.response.data
+      })
+    );
+};
+
 // Set loading state
 export const setEventLoading = () => {
   return {

@@ -56,7 +56,7 @@ class EventHeader extends Component {
           </div>
           <h1 className="eventView__header__title">{event.title}</h1>
           <Link
-            to={`/profile/${event.host}`}
+            to={`/profile/${event.user}`}
             className="eventView__header__host"
           >
             <img src={event.hostPhoto} alt="host" />

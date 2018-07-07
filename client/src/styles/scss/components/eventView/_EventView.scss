@@ -2,7 +2,7 @@
 .eventView {
   display: grid;
   grid-template-columns: 3fr 2fr;
-  grid-template-rows: min-content 1fr 1fr;
+  grid-template-rows: min-content min-content min-content;
   grid-row-gap: 1rem;
   grid-column-gap: 1rem;
   &__header {
@@ -24,6 +24,13 @@
   &__side {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
+    background-color: white;
+    border: 1px solid #eee;
+    border-radius: 4px;
+  }
+  &__comments {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
     background-color: white;
     border: 1px solid #eee;
     border-radius: 4px;

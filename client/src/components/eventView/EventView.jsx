@@ -10,6 +10,7 @@ import Spinner from "../common/Spinner";
 import EventHeader from "./EventHeader";
 import EventMain from "./EventMain";
 import EventSide from "./EventSide";
+import EventComments from "./eventComments/EventComments";
 
 class EventView extends Component {
   componentDidMount() {
@@ -38,6 +39,7 @@ class EventView extends Component {
           <EventHeader eventId={eventId} />
           <EventMain event={event} />
           <EventSide event={event} />
+          <EventComments eventId={eventId} />
         </Fragment>
       );
     }

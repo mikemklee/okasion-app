@@ -1,0 +1,11 @@
+.comment__form {
+  padding: 1rem;
+  &__submit {
+    @include button;
+    margin-top: -1rem;
+    margin-left: auto;
+    font-size: 1.6rem;
+    height: 3.5rem;
+    width: 7rem;
+  }
+}

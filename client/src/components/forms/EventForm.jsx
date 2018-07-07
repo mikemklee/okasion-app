@@ -68,7 +68,7 @@ class EventForm extends Component {
       address: this.state.address,
       latlng: this.state.latlng,
       host: user.name,
-      avatar: user.avatar
+      hostPhoto: user.avatar
     };
     this.props.createEvent(newEvent, this.props.history);
     console.log("submitted: ", newEvent);
@@ -87,7 +87,11 @@ class EventForm extends Component {
           onChange={this.onChange}
           error={errors.title}
         />
-        <PlaceField label="Address" onSelect={this.onPlaceSelect} />
+        <PlaceField
+          label="Address"
+          onSelect={this.onPlaceSelect}
+          error={errors.address}
+        />
         <SelectListField
           name="topic"
           label="Topic"

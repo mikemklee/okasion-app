@@ -4,6 +4,7 @@ import {
   GET_ERRORS,
   CLEAR_ERRORS,
   GET_EVENTS,
+  GET_EVENT,
   CREATE_EVENT,
   EVENT_LOADING
 } from "./types";
@@ -40,6 +41,22 @@ export const getEvents = () => dispatch => {
     .catch(error =>
       dispatch({
         type: GET_EVENTS,
+        payload: null
+      })
+    );
+};
+
+// Get event by id
+export const getEventById = id => dispatch => {
+  dispatch(setEventLoading());
+  axios
+    .get(`/api/events/id/${id}`)
+    .then(res => {
+      dispatch({ type: GET_EVENT, payload: res.data });
+    })
+    .catch(error =>
+      dispatch({
+        type: GET_EVENT,
         payload: null
       })
     );

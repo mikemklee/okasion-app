@@ -19,6 +19,24 @@ router.get("/", (req, res) => {
     .catch(error => res.status(404));
 });
 
+// @route   GET api/event/id/:id
+// @desc    Get event by ID
+// @access  Public
+router.get("/id/:id", (req, res) => {
+  const errors = {};
+  Event.findOne({ _id: req.params.id })
+    .then(event => {
+      if (!event) {
+        errors.noevent = "There is no event under this id!";
+        res.status(404).json(errors);
+      }
+      res.json(event);
+    })
+    .catch(error =>
+      res.status(404).json({ event: "There is no event under this id!" })
+    );
+});
+
 // @route   POST api/events
 // @desc    Create event
 // @access  Private
@@ -40,7 +58,7 @@ router.post(
       description: req.body.description,
       date: req.body.date,
       topic: req.body.topic,
-      avatar: req.body.avatar,
+      hostPhoto: req.body.hostPhoto,
       address: req.body.address,
       latlng: req.body.latlng,
       user: req.user.id

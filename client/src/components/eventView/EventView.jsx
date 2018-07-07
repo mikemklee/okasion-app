@@ -1,13 +1,57 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+
+import { getEventById } from "../../actions/eventActions";
+
+import Spinner from "../common/Spinner";
+import EventHeader from "./EventHeader";
+import EventMain from "./EventMain";
+import EventSide from "./EventSide";
 
 class EventView extends Component {
+  static propTypes = {
+    event: PropTypes.object.isRequired,
+    getEventById: PropTypes.func.isRequired
+  };
+
+  componentDidMount() {
+    if (this.props.match.params.id) {
+      this.props.getEventById(this.props.match.params.id);
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.event.event === null && this.props.event.loading) {
+      this.props.history.push("/notFound");
+    }
+  }
+
   render() {
-    return (
-      <div className="eventView container">
-        <h1>Event View</h1>
-      </div>
-    );
+    const { event, loading } = this.props.event;
+    let eventContent;
+
+    if (event === null || loading) {
+      eventContent = <Spinner />;
+    } else {
+      eventContent = (
+        <Fragment>
+          <EventHeader event={event} />
+          <EventMain event={event} />
+          <EventSide event={event} />
+        </Fragment>
+      );
+    }
+    return <div className="eventView container">{eventContent}</div>;
   }
 }
 
-export default EventView;
+const mapStateToProps = state => ({
+  event: state.event,
+  profile: state.profile
+});
+
+export default connect(
+  mapStateToProps,
+  { getEventById }
+)(EventView);

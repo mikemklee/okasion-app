@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 import EventsFeedItem from "./EventsFeedItem";
+import Spinner from "../common/Spinner";
 
 class EventsFeed extends Component {
   render() {
@@ -17,7 +18,7 @@ class EventsFeed extends Component {
               <EventsFeedItem key={event._id} event={event} />
             ))
           ) : (
-            <div className="eventsFeed__empty">No Event.</div>
+            <Spinner />
           )}
         </div>
       </div>

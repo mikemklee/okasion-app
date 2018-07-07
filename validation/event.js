@@ -7,6 +7,7 @@ module.exports = function validateEventInput(data) {
   data.title = !isEmpty(data.title) ? data.title : "";
   data.topic = !isEmpty(data.topic) ? data.topic : "";
   data.description = !isEmpty(data.description) ? data.description : "";
+  data.address = !isEmpty(data.address) ? data.address : "";
 
   // Validate title
   if (
@@ -44,6 +45,12 @@ module.exports = function validateEventInput(data) {
   if (Validator.isEmpty(data.description)) {
     console.log(data.description);
     errors.description = "Event description is required";
+  }
+
+  // Validate address
+  if (Validator.isEmpty(data.address)) {
+    console.log(data.address);
+    errors.address = "Event address is required";
   }
 
   return { errors, isValid: isEmpty(errors) };

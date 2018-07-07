@@ -1,0 +1,34 @@
+.eventView__side {
+  &--header {
+    padding: 1rem 2rem;
+    font-size: 1.8rem;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 1rem;
+  }
+
+  &--date,
+  &--address {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    padding: 0 2rem;
+  }
+  svg {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1rem;
+    fill: grey;
+  }
+}
+
+.eventMap {
+  width: 100%;
+  height: 30rem;
+  padding: 1rem;
+
+  svg {
+    width: 3rem;
+    height: 3rem;
+    fill: $pink;
+  }
+}

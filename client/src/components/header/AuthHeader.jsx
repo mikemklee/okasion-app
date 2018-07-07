@@ -8,7 +8,7 @@ class AuthHeader extends Component {
   };
 
   trackMenuOpen = event => {
-    if (event.target !== this.menu) {
+    if (!event.path.includes(this.menu)) {
       this.setState({ menuOpened: false });
     }
   };
@@ -48,15 +48,17 @@ class AuthHeader extends Component {
           }}
         >
           <img src={user.avatar} alt={user.name} />
-          {user.name}
           <i className="fas fa-sort-down" />
           {menuOpened && (
             <div className="header__user__menu">
-              <div className="header__user__menu__item">
-                <Link to="/">My Profile</Link>
+              <div className="header__user__menu__label">
+                Signed in as <strong>{user.name}</strong>
               </div>
               <div className="header__user__menu__item">
-                <Link to="/">Settings</Link>
+                <Link to={`/profile/${user.id}`}>My Profile</Link>
+              </div>
+              <div className="header__user__menu__item">
+                <Link to="#">Settings</Link>
               </div>
 
               <div onClick={logout} className="header__user__menu__item">

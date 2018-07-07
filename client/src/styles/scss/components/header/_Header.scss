@@ -62,14 +62,14 @@
 }
 
 .header__user {
-  margin-left: 2rem;
+  padding: 0 1rem;
+  margin-left: 1rem;
   font-size: 1.8rem;
   display: flex;
   position: relative;
   align-items: center;
   cursor: pointer;
   img {
-    margin-right: 1rem;
     width: 3rem;
     height: 3rem;
     border-radius: 5px;
@@ -85,16 +85,45 @@
     background-color: white;
     top: 6rem;
     right: 0;
-    width: 13rem;
     border: 1px solid #eee;
     border-radius: 4px;
 
+    &__label {
+      padding: 0.5rem 1rem;
+      cursor: default;
+      border-bottom: 1px solid #eee;
+    }
+
     &__item {
       padding: 0.5rem 1rem;
+      width: 17rem;
 
       &:hover {
         background-color: darken(white, 3%);
       }
+    }
+
+    &::before {
+      position: absolute;
+      top: -7px;
+      right: 15px;
+      display: inline-block;
+      border-right: 7px solid transparent;
+      border-bottom: 7px solid #ccc;
+      border-left: 7px solid transparent;
+      border-bottom-color: darken(#eee, 5%);
+      content: "";
+    }
+
+    &::after {
+      position: absolute;
+      top: -6px;
+      right: 16px;
+      display: inline-block;
+      border-right: 6px solid transparent;
+      border-bottom: 6px solid white;
+      border-left: 6px solid transparent;
+      content: "";
     }
   }
 }

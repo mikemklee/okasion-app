@@ -1,16 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+// components
+import EventDescription from "./EventDescription";
+import EventComments from "../eventComments/EventComments";
+
 const EventMain = ({ event }) => {
   return (
     <div className="eventView__main">
-      <div className="eventView__main--topic">
-        Topic: <span>{event.topic}</span>
-      </div>
-      <div className="eventView__main--description">
-        <h3>Event Details</h3>
-        {event.description}
-      </div>
+      <EventDescription topic={event.topic} description={event.description} />
+      <EventComments />
     </div>
   );
 };

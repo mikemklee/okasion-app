@@ -19,6 +19,7 @@ import CreateEvent from "./components/createEvent/CreateEvent";
 import Dashboard from "./components/dashboard/Dashboard";
 import CreateProfile from "./components/createProfile/CreateProfile";
 import NotFoundPage from "./components/common/NotFoundPage";
+import UnderConstructionPage from "./components/common/UnderConstructionPage";
 
 class App extends Component {
   componentDidMount() {
@@ -39,7 +40,12 @@ class App extends Component {
               <Route exact path="/createEvent" component={CreateEvent} />
               <Route exact path="/dashboard" component={Dashboard} />
               <Route exact path="/createProfile" component={CreateProfile} />
-              <Route exact path="/profile/:id" component={NotFoundPage} />
+              <Route
+                exact
+                path="/profile/:id"
+                component={UnderConstructionPage}
+              />
+              <Route component={NotFoundPage} />
             </Switch>
           </div>
         </Router>

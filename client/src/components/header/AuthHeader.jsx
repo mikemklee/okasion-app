@@ -8,7 +8,8 @@ class AuthHeader extends Component {
   };
 
   trackMenuOpen = event => {
-    if (!event.path.includes(this.menu)) {
+    let path = event.composedPath();
+    if (!path.includes(this.menu)) {
       this.setState({ menuOpened: false });
     }
   };

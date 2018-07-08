@@ -1,9 +1,9 @@
 import React, { Fragment } from "react";
 
-const EventGuestActions = ({ attending, onAttend, onCancelAttend }) => {
+const EventGuestActions = ({ isAttending, onAttend, onCancelAttend }) => {
   return (
     <div className="eventView__header__actions">
-      {attending ? (
+      {isAttending ? (
         <Fragment>
           <span className="eventView__header__actions--info">
             You are attending this event.

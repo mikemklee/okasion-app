@@ -1,26 +1,29 @@
 import React, { Component, Fragment } from "react";
+import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
+// actions
 import { getEventById } from "../../../actions/eventActions";
 
+// components
+import Spinner from "../../common/Spinner";
 import CommentForm from "../../forms/CommentForm";
 import CommentFeed from "./CommentFeed";
-import Spinner from "../../common/Spinner";
 
 class EventComments extends Component {
   componentDidMount() {
-    this.props.getEventById(this.props.eventId);
+    this.props.getEventById(this.props.match.params.id);
   }
 
   render() {
     const { event, loading } = this.props.event;
-    let eventContent;
+    let commentsContent;
 
     if (event === null || loading || Object.keys(event).length === 0) {
-      eventContent = <Spinner />;
+      commentsContent = <Spinner />;
     } else {
-      eventContent = (
+      commentsContent = (
         <Fragment>
           <div className="eventView__comments--label">Comments</div>
           <CommentFeed eventId={event._id} comments={event.comments} />
@@ -29,7 +32,7 @@ class EventComments extends Component {
       );
     }
 
-    return <div className="eventView__comments">{eventContent}</div>;
+    return <div className="eventView__comments">{commentsContent}</div>;
   }
 }
 
@@ -42,7 +45,9 @@ const mapStateToProps = state => ({
   event: state.event
 });
 
-export default connect(
-  mapStateToProps,
-  { getEventById }
-)(EventComments);
+export default withRouter(
+  connect(
+    mapStateToProps,
+    { getEventById }
+  )(EventComments)
+);

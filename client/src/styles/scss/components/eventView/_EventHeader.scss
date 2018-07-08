@@ -32,8 +32,12 @@
     img {
       width: 4rem;
       height: 4rem;
-      border-radius: 50%;
+      border-radius: 5px;
       margin-right: 1rem;
+    }
+    span:nth-of-type(2) {
+      margin-left: 0.5rem;
+      font-weight: bold;
     }
   }
 }

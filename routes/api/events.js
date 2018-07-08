@@ -111,8 +111,14 @@ router.post(
             .json({ alreadygoing: "User already going to this event" });
         }
 
+        const newAttendee = {
+          user: req.user.id,
+          name: req.user.name,
+          avatar: req.user.avatar
+        };
+
         // Add user id to attendees array
-        event.attendees.unshift({ user: req.user.id });
+        event.attendees.unshift(newAttendee);
 
         event.save().then(event => res.json(event));
       })

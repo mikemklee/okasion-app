@@ -17,20 +17,13 @@
   &__main {
     grid-column: 1 / 2;
     grid-row: 2 / -1;
-    background-color: white;
-    border: 1px solid #eee;
-    border-radius: 4px;
+    align-items: start;
   }
   &__side {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
-    background-color: white;
-    border: 1px solid #eee;
-    border-radius: 4px;
   }
   &__comments {
-    grid-column: 2 / 3;
-    grid-row: 3 / 4;
     background-color: white;
     border: 1px solid #eee;
     border-radius: 4px;

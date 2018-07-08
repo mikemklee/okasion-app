@@ -1,17 +1,22 @@
 .eventView__main {
-  width: 100%;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  &--topic {
-    padding: 1rem 2rem;
-    font-size: 1.8rem;
-    border-bottom: 1px solid #eee;
-    span {
-      font-weight: bold;
+  &__details {
+    background-color: white;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    width: 100%;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    &--topic {
+      padding: 1rem 2rem;
+      font-size: 1.8rem;
+      border-bottom: 1px solid #eee;
+      span {
+        font-weight: bold;
+      }
     }
-  }
 
-  &--description {
-    padding: 2rem;
+    &--description {
+      padding: 2rem;
+    }
   }
 }

@@ -1,6 +1,6 @@
 # Okasion
 
-Pronounced like "occasion" - a full-stack application for hosting & attending meetup events. I wanted to make a better-looking version of meetup.com. Built with the MERN stack, the application allows users to host or attend events, browse events by topics, or discuss about events with other users.
+Pronounced "occasion" - a full-stack application for hosting & attending meetup events. It's a better-looking version of meetup.com, built with the MERN stack. The application allows users to host or attend events, and dicsuss about the events with other users.
 
 #### Check out the App here: [Live Preview](https://okasion-leemun1.herokuapp.com)
 

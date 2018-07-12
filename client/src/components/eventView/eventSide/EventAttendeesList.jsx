@@ -1,6 +1,6 @@
 import React from "react";
 
-import Spinner from "../../common/Spinner";
+import Spinner from "components/common/Spinner";
 import EventAttendee from "./EventAttendee";
 
 const EventAttendeesList = ({ attendees }) => {

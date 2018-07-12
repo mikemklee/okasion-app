@@ -2,8 +2,10 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
-import { addComment } from "../../actions/eventActions";
+// actions
+import { addComment } from "actions/eventActions";
 
+// components
 import TextAreaField from "../common/TextAreaField";
 
 class CommentForm extends Component {

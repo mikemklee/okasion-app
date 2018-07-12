@@ -1,5 +1,11 @@
 import axios from "axios";
 
+/**
+ * attach auth token to header of every axios requests
+ * @function setAuthToken
+ * @param {string} token - jwt token
+ */
+
 const setAuthToken = token => {
   if (token) {
     // Apply to every request

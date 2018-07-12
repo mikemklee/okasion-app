@@ -4,6 +4,12 @@ import store from "../store";
 import setAuthToken from "./setAuthToken";
 import { setCurrentUser, logoutUser } from "../actions/authActions";
 
+/**
+ * checks whether jwt token has been expired.
+ * if still valid, authenticate user
+ * if expired, logout user and redirec to login page
+ * @function checkTokenExpiry
+ */
 const checkTokenExpiry = () => {
   // Check for token
   if (localStorage.jwtToken) {
@@ -14,10 +20,10 @@ const checkTokenExpiry = () => {
     // Set user and isAuthenticated
     store.dispatch(setCurrentUser(decoded));
 
-    // Check for expired token
+    // Check for expired token (valid for 60 minutes)
     const currentTime = Date.now() / 1000;
     if (decoded.exp < currentTime) {
-      console.log("expired!");
+      console.log("token expired!");
       // Logout User
       store.dispatch(logoutUser());
       // Redirect to login

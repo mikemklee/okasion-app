@@ -3,11 +3,11 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
-import { getCurrentProfile, deleteAccount } from "../../actions/profileActions";
+import { getCurrentProfile, deleteAccount } from "actions/profileActions";
 
 import Spinner from "../common/Spinner";
 import ProfileActions from "./ProfileActions";
-import checkTokenExpiry from "../../utils/checkTokenExpiry";
+import checkTokenExpiry from "utils/checkTokenExpiry";
 
 class Dashboard extends Component {
   componentDidMount() {

@@ -5,7 +5,7 @@ import { withRouter } from "react-router-dom";
 import moment from "moment";
 
 // actions
-import { createEvent } from "../../actions/eventActions";
+import { createEvent } from "actions/eventActions";
 
 // components
 import TextField from "../common/TextField";
@@ -25,6 +25,7 @@ const options = [
   { label: "Food & Drink", value: "Food & Drink" },
   { label: "Other", value: "Other" }
 ];
+
 class EventForm extends Component {
   state = {
     title: "",

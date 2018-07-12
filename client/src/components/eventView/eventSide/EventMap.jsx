@@ -3,8 +3,8 @@ import GoogleMapReact from "google-map-react";
 import PropTypes from "prop-types";
 
 // components
-import Spinner from "../../common/Spinner";
-import Icon from "../../common/Icon";
+import Spinner from "components/common/Spinner";
+import Icon from "components/common/Icon";
 
 const GOOGLE_MAP_KEY = process.env.REACT_APP_GOOGLE_MAP_KEY;
 

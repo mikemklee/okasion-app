@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import moment from "moment";
 
-import { deleteComment } from "../../../actions/eventActions";
+import { deleteComment } from "actions/eventActions";
 
 class CommentItem extends Component {
   onDeleteClick = (eventId, commentId) => () => {

@@ -1,3 +1,10 @@
+/**
+ * takes a value and checks whether it is "falsy"
+ * @function isEmpty
+ * @param {any} value
+ * @returns {boolean}
+ */
+
 const isEmpty = value =>
   value === undefined ||
   value === null ||

@@ -1,7 +1,8 @@
 import React from "react";
 import format from "date-fns/format";
 
-import Icon from "../../common/Icon";
+// components
+import Icon from "components/common/Icon";
 import EventMap from "./EventMap";
 
 const EventWhenWhere = ({ date, address, coords }) => {

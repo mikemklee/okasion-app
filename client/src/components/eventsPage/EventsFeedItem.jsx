@@ -30,11 +30,7 @@ const EventFeedItem = ({ event }) => {
           {event.description}
         </p>
         <div className="eventsFeed__item__preview__attendee">
-          {event.attendees ? (
-            <span>{event.attendees.length} Members Attending</span>
-          ) : (
-            <span>Be the first to join this event!</span>
-          )}
+          <span>{event.attendees.length} Members Attending</span>
         </div>
       </div>
     </div>

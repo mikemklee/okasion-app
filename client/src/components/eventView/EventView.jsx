@@ -8,10 +8,10 @@ import {
   addAttendee,
   removeAttendee,
   deleteEvent
-} from "../../actions/eventActions";
+} from "actions/eventActions";
 
 // utils
-import { amIAttending } from "../../utils/amIAttending";
+import { amIAttending } from "utils/amIAttending";
 
 // components
 import Spinner from "../common/Spinner";
